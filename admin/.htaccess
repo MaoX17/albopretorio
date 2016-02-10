@@ -1,0 +1,4 @@
+#AuthType Basic
+#AuthName "Password Required for Admin Area"
+#AuthUserFile /var/www/passwd/albopretorio.pwd
+#Require valid-user 

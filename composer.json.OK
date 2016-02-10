@@ -1,0 +1,38 @@
+{
+    "name": "mproietti/albopretorio",
+    "description": "Albo Pretorio per le PA (Pubbliche amministrazioni)",
+    "version": "0.2",
+    "type": "library",
+    "keywords": ["albo", "albopretorio", "PA"],
+    "homepage": "http://blog.maurizio.proietti.nem",
+    "time": "2015-11-26",
+    "license": "GPL2",
+    "authors": [
+        {
+            "name": "Maurizio Proietti",
+            "email": "maurizio.proietti@gmail.com",
+            "homepage": "http://blog.maurizio.proietti.name",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "maurizio.proietti@gmail.com"
+    },
+    "require": {
+        "robloach/component-installer": "dev-master",
+        "propel/propel": "~2.0@dev",
+        "codeguy/upload": "dev-master",
+        "components/jquery": "1.9.*",
+        "components/jqueryui": "1.11.*",
+        "components/bootstrap": "3.3.*",
+        "components/bootstrap-datetimepicker": "2.3.*",
+ 	"tecnickcom/tcpdf": "6.2.*"
+    },
+    "config": {
+        "component-dir": "libs/js",
+        "component-baseurl": "./libs/js"
+    },
+    "autoload": {
+        "classmap": ["propel/class/"]
+    }
+}
