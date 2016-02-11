@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="albi" idMethod="native" phpName="Albi">
+    <column name="id_albo" phpName="IdAlbo" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_tipo" phpName="IdTipo" type="INTEGER" size="2" required="true"/>
+    <column name="id_tipo_determina" phpName="IdTipoDetermina" type="INTEGER" size="2"/>
+    <column name="id_tipo_trasp" phpName="IdTipoTrasp" type="INTEGER" size="2"/>
+    <column name="dt_pubblicaz_dal" phpName="DtPubblicazDal" type="DATE" required="true"/>
+    <column name="dt_pubblicaz_al" phpName="DtPubblicazAl" type="DATE" required="true"/>
+    <column name="dt_atto" phpName="DtAtto" type="DATE" required="true"/>
+    <column name="nr_atto" phpName="NrAtto" type="INTEGER" size="5"/>
+    <column name="oggetto" phpName="Oggetto" type="LONGVARCHAR"/>
+    <column name="autorita_emanante" phpName="AutoritaEmanante" type="VARCHAR" size="254" required="true"/>
+    <column name="spesa_prevista" phpName="SpesaPrevista" type="DECIMAL" size="9" scale="2" defaultValue="0.00"/>
+    <column name="id_area" phpName="IdArea" type="INTEGER" size="2"/>
+    <column name="serialize" phpName="Serialize" type="LONGVARCHAR"/>
+    <column name="da_validare" phpName="DaValidare" type="VARCHAR" size="1"/>
+    <column name="note" phpName="Note" type="VARCHAR" size="250"/>
+    <column name="manuale" phpName="Manuale" type="VARCHAR" size="1" defaultValue="n"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="albi_tmp" idMethod="native" phpName="AlbiTmp">
+    <column name="id_albo" phpName="IdAlbo" type="INTEGER" size="10" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_tipo" phpName="IdTipo" type="INTEGER" size="2" required="true"/>
+    <column name="dt_pubblicaz_dal" phpName="DtPubblicazDal" type="DATE" required="true"/>
+    <column name="dt_pubblicaz_al" phpName="DtPubblicazAl" type="DATE" required="true"/>
+    <column name="dt_atto" phpName="DtAtto" type="DATE" required="true"/>
+    <column name="nr_atto" phpName="NrAtto" type="INTEGER" size="5" required="true"/>
+    <column name="oggetto" phpName="Oggetto" type="LONGVARCHAR" required="true"/>
+    <column name="autorita_emanante" phpName="AutoritaEmanante" type="VARCHAR" size="254" required="true"/>
+    <column name="id_area" phpName="IdArea" type="INTEGER" size="2" required="true"/>
+    <column name="file" phpName="File" type="VARCHAR" size="254" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="amm_aperta" idMethod="native" phpName="AmmAperta">
+    <column name="id_amm_aperta" phpName="IdAmmAperta" type="INTEGER" size="10" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_albo" phpName="IdAlbo" type="INTEGER" size="10" required="true"/>
+    <column name="ragionesociale" phpName="Ragionesociale" type="VARCHAR" size="250" required="true"/>
+    <column name="piva" phpName="Piva" type="VARCHAR" size="100" required="true"/>
+    <column name="resp_proc" phpName="RespProc" type="VARCHAR" size="250" required="true"/>
+    <column name="norma" phpName="Norma" type="VARCHAR" size="250"/>
+    <column name="modalita" phpName="Modalita" type="VARCHAR" size="250"/>
+    <column name="importo" phpName="Importo" type="DECIMAL" size="10" scale="2" required="true"/>
+    <column name="pubblicato" phpName="Pubblicato" type="VARCHAR" size="1" required="true" defaultValue="N"/>
+    <column name="dt_pubblicazione" phpName="DtPubblicazione" type="DATE" required="true"/>
+    <column name="resp_proc_idrubrica" phpName="RespProcIdrubrica" type="INTEGER" size="15" defaultValue="0"/>
+    <unique name="idx_id_albo">
+      <unique-column name="id_albo"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="aree" idMethod="native" phpName="Aree">
+    <column name="id_area" phpName="IdArea" type="INTEGER" size="2" sqlType="int(2) unsigned" primaryKey="true" required="true"/>
+    <column name="responsabile" phpName="Responsabile" type="VARCHAR" size="254" required="true"/>
+    <column name="area" phpName="Area" type="VARCHAR" size="254" required="true"/>
+    <column name="attivo" phpName="Attivo" type="CHAR"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="files" idMethod="native" phpName="Files">
+    <column name="id_files" phpName="IdFiles" type="INTEGER" size="10" sqlType="int(10) unsigned" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="id_albo" phpName="IdAlbo" type="INTEGER" size="10"/>
+    <column name="file" phpName="File" type="VARCHAR" size="254"/>
+    <column name="history_id" phpName="HistoryId" type="INTEGER"/>
+    <column name="doc_id" phpName="DocId" type="INTEGER"/>
+    <column name="from_blob" phpName="FromBlob" type="VARCHAR" size="1" required="true" defaultValue="s"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tipi" idMethod="native" phpName="Tipi">
+    <column name="id_tipo" phpName="IdTipo" type="INTEGER" size="2" sqlType="int(2) unsigned" primaryKey="true" required="true"/>
+    <column name="tipo" phpName="Tipo" type="VARCHAR" size="254" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tipi_determina" idMethod="native" phpName="TipiDetermina">
+    <column name="id_tipo_determina" phpName="IdTipoDetermina" type="INTEGER" size="2" primaryKey="true" required="true"/>
+    <column name="tipo_determina" phpName="TipoDetermina" type="VARCHAR" size="254" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+  <table name="tipi_trasp" idMethod="native" phpName="TipiTrasp">
+    <column name="id_tipo_trasp" phpName="IdTipoTrasp" type="INTEGER" size="2" primaryKey="true" required="true"/>
+    <column name="tipo_trasp" phpName="TipoTrasp" type="VARCHAR" size="250" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="MyISAM"/>
+    </vendor>
+  </table>
+</database>

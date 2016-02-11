@@ -1,0 +1,7 @@
+//TODO: Fare pagina con la ricerca di errori come: date vuote, importi troppo bassi o errati... ecc
+//TODO: fare pagina con ricerca di caratteri assurdi (v oggetto: http://albotest.provincia.prato.it/visualizza-dettagli.php?id_albo=201103578)
+//TODO: fare pagina x amm aperta che individua gli atti pubblicati nella sezione PRE 2010 anche se sono POST 2010!!!!
+//TODO: esempio:http://albotest.provincia.prato.it/admin/amm_aperta_modifica.php?id_albo=80
+//TODO: es. http://albotest.provincia.prato.it/admin/amm_aperta_modifica.php?id_albo=81
+//TODO: prelevare le aree direttamente dal db del protocollo invece che tenerne una copia
+//TODO: eseguire le query direttamente sul db del protocollo invece che eseguire l'import ogni notte

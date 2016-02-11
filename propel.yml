@@ -1,0 +1,36 @@
+propel:
+        general:
+                project: albopretorio
+                version: 0.3
+
+        paths:
+                projectDir:  /var/www/vhosts/albopretorio
+                schemaDir: /var/www/vhosts/albopretorio/propel
+                phpDir: /var/www/vhosts/albopretorio/propel/class
+                phpConfDir: /var/www/vhosts/albopretorio/propel
+## All Database settings ##
+        database:
+                connections:
+                        default:
+                                adapter: mysql
+                                dsn: "mysql:host=192.168.0.20;dbname=albopretorio"
+                                user: albopretorio
+                                password: albo.pass
+                                settings:
+                                    charset: utf8
+
+                        albopretorio:
+                                adapter: mysql
+                                dsn: "mysql:host=192.168.0.20;dbname=albopretorio"
+                                user: albopretorio
+                                password: albo.pass
+                                settings:
+                                    charset: utf8
+
+                        protocolloro:
+                                adapter: pgsql
+                                dsn: "pgsql:host=192.168.0.23;port=5433;dbname=protocollo;user=protocolloro;password=protocolloro"
+                                user: protocolloro
+                                password: protocolloro
+                                settings:
+                                    charset: utf8
